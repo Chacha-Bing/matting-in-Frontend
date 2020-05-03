@@ -7,7 +7,7 @@ var showAfter = getId('showAfter');
 var canvas = getId('canvas');
 var ctx = canvas.getContext('2d');
 var imgFile;
-var dataUrl;
+var blobUrl;
 var outline = 50;
 
 getId('input').addEventListener('click', function(){
@@ -23,9 +23,9 @@ getId('headimg').onchange = function(e) {
   }
 }
 getId('download').addEventListener('click', function() {
-  if(dataUrl) {
+  if(blobUrl) {
     let a = document.createElement('a');
-    a.href = dataUrl;
+    a.href = blobUrl;
     a.download = '抠图.png';
     a.click();
   } else {
@@ -99,8 +99,12 @@ function dealImg(width, height, originImg) {
   }
 
   ctx.putImageData(imgPixel, 0, 0);
-  dataUrl = canvas.toDataURL("image/png");
-  showAfter.src = dataUrl;
+  // dataUrl = canvas.toDataURL("image/png");
+  // 由于浏览器实现，a标签href无法承载过长base64，所以对于大图片需要转bloburl下载，否则会出现network error
+  canvas.toBlob(function(blob) {
+    blobUrl = URL.createObjectURL(blob);
+    showAfter.src = blobUrl;
+  });
 
 }
 
