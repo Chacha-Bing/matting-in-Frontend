@@ -1,0 +1,81 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, rgb(92, 194, 255), rgb(163, 92, 255));;
+}
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+@media screen and (max-width: 480px) {
+  .title {
+    margin: 10px 0;
+  }
+  .show-box {
+    width: 100%;
+    height: 80vh;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #showBefore, #showAfter {
+    max-width: 80vw;
+    max-height: 35vh;
+    flex: 1;
+    border-radius: 10px;
+    background-color: #c7c7c7;
+  }
+  .to-github {
+    top: 12px;
+  }
+}
+@media screen and (min-width: 481px) {
+  .show-box {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #showBefore, #showAfter {
+    max-width: 45vw;
+    max-height: 65vh;
+    flex: 1;
+    border-radius: 10px;
+    background-color: #c7c7c7;
+  }
+  .to-github {
+    top: 33px;
+  }
+}
+.btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.to-github {
+  position: absolute;
+  right: 20px;
+}
+.to-github>img {
+  width: 40px;
+  height: 40px;
+}
+#input, #matting, #download {
+  width: 20vw;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 45px;
+  color: white;
+  background-color: #8374fe;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+#headimg, #canvas {
+  display: none;
+}

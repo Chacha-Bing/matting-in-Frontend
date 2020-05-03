@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>我要抠图</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./src/matting.css">
+</head>
+<body>
+  <a href="https://github.com/Chacha-Bing/matting-in-Frontend" target="_blank" class="to-github">
+    <img src="./img/github.png" alt="github">
+  </a>
+
+  <p class="title">请上传图片</p>
+  <input id="headimg" type="file" name="headimg">
+
+  <div class="btn-box">
+    <button id="input">选择</button>
+    <button id="matting">抠图</button>
+    <button id="download">下载</button>
+  </div>
+
+  <div class="show-box">
+    <img id="showBefore"/>
+    <img id="showAfter"/>
+  </div>
+  
+  <canvas id="canvas"></canvas>
+  
+  <script src="./src/matting.js"></script>
+</body>
+</html>
